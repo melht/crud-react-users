@@ -5,7 +5,7 @@ import "./User.css";
 const EditUser = () => {
   const [user, setUser] = useState([]);
   const { id } = useParams();
-  const getUserApi = "http://localhost:3001/usuarios";
+  const getUserApi = "https://tortolero-usuarios-api.azurewebsites.net/usuarios";
 
   useEffect(() => {
     getUser();
@@ -27,8 +27,8 @@ const EditUser = () => {
       <table className="table table-bordered">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
+        <th></th>
+        <th>Data</th>
         
       </tr>
     </thead>
