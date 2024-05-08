@@ -4,7 +4,7 @@ import Loader from '../Common/Loader';
 import './User.css';
 const CreateUser = () => {
     const navigate = useNavigate();
-    const createUserApi = "https://tortolero-usuarios-api.azurewebsites.net//usuarios/"
+    const createUserApi = "https://tortolero-usuarios-api.azurewebsites.net/usuarios/"
     // PASO 1 const createUserApi = process.env.API_URL + "http://(url real)"  
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
