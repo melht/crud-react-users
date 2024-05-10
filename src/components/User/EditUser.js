@@ -9,7 +9,7 @@ const EditUser = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
-  const getUserApi = "https://tortolero-usuarios-api.azurewebsites.net/usuarios";
+  const getUserApi = "https://tortolero-usuarios-api.azurewebsites.net/usuarios/";
 
   useEffect(() => {
     getUser();

@@ -5,7 +5,7 @@ import "./User.css";
 const EditUser = () => {
   const [user, setUser] = useState([]);
   const { id } = useParams();
-  const getUserApi = "https://tortolero-usuarios-api.azurewebsites.net/usuarios";
+  const getUserApi = "https://tortolero-usuarios-api.azurewebsites.net/usuarios/";
 
   useEffect(() => {
     getUser();

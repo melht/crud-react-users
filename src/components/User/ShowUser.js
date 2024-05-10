@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
 
 const ShowUser = () => {
-  const showUserApi = "https://tortolero-usuarios-api.azurewebsites.net/usuarios";
+  const showUserApi = "https://tortolero-usuarios-api.azurewebsites.net/usuarios/";
 
   const [user, setUser] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -14,13 +14,13 @@ const ShowUser = () => {
     console.log("id : -", id);
     setIsLoading(true);
     try {
-      const response = await fetch(showUserApi.concat("/") + id, {
+      const response = await fetch(showUserApi + id, {
         method: "DELETE",
       });
       if (!response.ok) {
         throw new Error("Failed to delete item");
       }
-      setUser(user.filter((item) => item._id !== id));
+      setUser(user.filter((item) => item.email !== id));
     } catch (error) {
       setError(error.message);
     } finally {
@@ -71,17 +71,17 @@ const ShowUser = () => {
                   <td>{item.email}</td>
                   <td>{item.password}</td>
                   <td>
-                    <Link to={`/edit-user/${item._id}`}>
+                    <Link to={`/edit-user/${item.email}`}>
                       <i className="fa fa-pencil" aria-hidden="true"></i>
                     </Link>
-                    <Link to={`/user/${item._id}`}>
+                    <Link to={`/user/${item.email}`}>
                       <i className="fa fa-eye" aria-hidden="true"></i>
                     </Link>
 
                     <i
                       className="fa fa-trash-o"
                       aria-hidden="true"
-                      onClick={() => handelDelete(item._id)}
+                      onClick={() => handelDelete(item.email)}
                     ></i>
                   </td>
                 </tr>
