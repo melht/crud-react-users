@@ -38,7 +38,7 @@ const ShowUser = () => {
       .get(showUserApi)
       .then((res) => {
         console.log("Data:",res.data)
-        setUser(res.data.data);
+        setUser(res.data);
       })
       .catch((err) => {
         console.log(err);
